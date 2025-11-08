@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Socket.IO Test</title>
+</head>
+
+<body>
+ <h1>Socket.IO Example</h1>
+
+ <!-- ✅ Correct CDN link -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
+
+ <script>
+  // Connect to your Node.js server
+  const socket = io('http://localhost:8000');
+
+  // Receive message from server
+  socket.on('Welcome', (msg) => {
+   console.log('Server says:', msg);
+  });
+
+  // Send a message to the server
+  socket.emit('message', 'Hello Server, this is the client!');
+ </script>
+</body>
+
+</html>
